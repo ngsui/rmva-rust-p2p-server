@@ -10,6 +10,8 @@
 ![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088ff?logo=githubactions)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+用惯了RMVA，写着玩的。
+
 2011年製エンジン（RPG Maker VX Ace / RGSS3 / Ruby 1.9.2）のシングルプレイRPGを、アカウントシステム・オークションハウス経済・リアルタイムマルチプレイ対応のオンラインゲームへと改造。ネットワーク層をRustでゼロから書き直し、プロトコル設計・サーバー・クライアントDLL・DB層・CI/CD・本番デプロイまで全リンクを一人で完結させた。
 
 ## アーキテクチャ

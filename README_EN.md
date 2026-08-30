@@ -10,6 +10,8 @@
 ![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088ff?logo=githubactions)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+用惯了RMVA，写着玩的。
+
 A single-player RPG built on a 2011 engine (RPG Maker VX Ace / RGSS3 / Ruby 1.9.2), transformed into an online game with an account system, auction-house economy, and real-time multiplayer — the entire network layer rewritten from scratch in Rust, covering protocol design, server, client DLL, database layer, CI/CD, and production deployment end to end.
 
 ## Architecture

@@ -10,6 +10,8 @@
 ![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088ff?logo=githubactions)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+用惯了RMVA，写着玩的。
+
 把一款 2011 年引擎（RPG Maker VX Ace / RGSS3 / Ruby 1.9.2）的单机 RPG 改造成支持账号体系、拍卖行经济系统与实时联机的网络游戏——网络层全部用 Rust 从零重写，独立完成协议设计、服务端、客户端 DLL、数据库层、CI/CD 与生产部署的全链路。
 
 ## 架构
