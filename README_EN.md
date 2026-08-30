@@ -14,6 +14,20 @@
 
 A single-player RPG built on a 2011 engine (RPG Maker VX Ace / RGSS3 / Ruby 1.9.2), transformed into an online game with an account system, auction-house economy, and real-time multiplayer — the entire network layer rewritten from scratch in Rust, covering protocol design, server, client DLL, database layer, CI/CD, and production deployment end to end.
 
+## Screenshots
+
+**In-game login system** (press L) — native Win32 login panel; accounts are stored in PostgreSQL with argon2id hashing, and a session token is issued upon login:
+
+![Login system](screenshots/游戏登录系统截图.png)
+
+**In-game auction house** (press P) — three-tab trading UI (market / my listings / sell); all gold and item settlement happens inside server-side transactions, so the client cannot forge balances:
+
+![Auction house](screenshots/游戏拍卖行页面截图.png)
+
+**Cloud production deployment** — running as a systemd service on a Tencent Cloud Lighthouse server (Debian 12); journald shows the full chain of player connections, registrations, and auction operations:
+
+![Tencent Cloud console](screenshots/腾讯云的控制台.png)
+
 ## Architecture
 
 ```
