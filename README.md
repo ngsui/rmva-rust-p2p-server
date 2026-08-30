@@ -8,12 +8,12 @@
 ![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088ff?logo=githubactions)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-把一款 2011 年引擎（RGSS3 / Ruby 1.9）的单机 RPG 改造成支持账号体系、拍卖行经济系统与实时联机的网络游戏——网络层全部用 Rust 从零重写，独立完成协议设计、服务端、客户端 DLL、数据库层、CI/CD 与生产部署的全链路。
+把一款 2011 年引擎（RPG Maker VX Ace / RGSS3 / Ruby 1.9.2）的单机 RPG 改造成支持账号体系、拍卖行经济系统与实时联机的网络游戏——网络层全部用 Rust 从零重写，独立完成协议设计、服务端、客户端 DLL、数据库层、CI/CD 与生产部署的全链路。
 
 ## 架构
 
 ```
-RPG Maker VX Ace (RGSS3 / Ruby 1.9.2)
+RPG Maker VX Ace（RGSS3 / Ruby 1.9.2）
         │  Win32API · stdcall
         ▼
 rgss3_rust_net.dll            net-win  · 32 位 cdylib
@@ -55,7 +55,7 @@ PostgreSQL
 - 每连接固定窗口限速 30 msg/s，连续违规自动断开，防消息洪泛
 
 **32 位 DLL 与 Win32 FFI**
-- 目标环境为 RGSS3（Ruby 1.9）+ 32 位 Game.exe：通过 `#[no_mangle] extern "system"` 导出 stdcall 接口
+- 目标环境为 RPG Maker VX Ace / RGSS3（Ruby 1.9.2）+ 32 位 Game.exe：通过 `#[no_mangle] extern "system"` 导出 stdcall 接口
 - 全部 Win32 常量 / 结构体 / 消息对照官方头文件手工声明，**不引入 windows-rs 等绑定库**——DLL 仅依赖标准库 + net-core
 - 原生 UI（登录 / 拍卖行 / 中文输入）在独立线程创建，消息循环与游戏主线程解耦
 - 静态链接 CRT（`+crt-static`），玩家机器无需安装 VC++ 运行库
