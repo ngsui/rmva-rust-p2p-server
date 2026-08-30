@@ -74,6 +74,7 @@ PostgreSQL
 [Releases](https://github.com/ngsui/rmva-rust-p2p-server/releases) からコンパイル済みの成果物をダウンロード。Rust環境は不要：
 
 - `p2p_server-linux-x86_64` — Linuxサーバー（musl静的リンク、任意のx86_64ディストリで依存ゼロ実行）
+- `p2p_server-win-x86_64.zip` — Windowsサーバー（解凍してすぐ実行、ローカルテストに最適）
 - `rgss3_rust_net_win32.zip` — 32ビット WindowsクライアントDLL（解凍してゲームの `System/` フォルダへ）
 
 サーバーにはPostgreSQLが必要。DBを作成して実行：

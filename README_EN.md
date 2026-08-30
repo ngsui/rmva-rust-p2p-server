@@ -74,6 +74,7 @@ PostgreSQL
 Grab the compiled artifacts from [Releases](https://github.com/ngsui/rmva-rust-p2p-server/releases) — no Rust toolchain required:
 
 - `p2p_server-linux-x86_64` — Linux server (musl static, runs on any x86_64 distro with zero dependencies)
+- `p2p_server-win-x86_64.zip` — Windows server (unzip and run, easiest for local testing)
 - `rgss3_rust_net_win32.zip` — 32-bit Windows client DLL (unzip into your game's `System/` folder)
 
 The server needs PostgreSQL. Create the database, then run:
