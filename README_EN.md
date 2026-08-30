@@ -69,7 +69,14 @@ PostgreSQL
 
 ## Getting Started
 
-Requirements: Rust stable, PostgreSQL.
+**Option 1: Download prebuilt binaries (recommended)**
+
+Grab the compiled artifacts from [Releases](https://github.com/ngsui/rmva-rust-p2p-server/releases) — no Rust toolchain required:
+
+- `p2p_server-linux-x86_64` — Linux server (musl static, runs on any x86_64 distro with zero dependencies)
+- `rgss3_rust_net_win32.zip` — 32-bit Windows client DLL (unzip into your game's `System/` folder)
+
+The server needs PostgreSQL. Create the database, then run:
 
 ```bash
 # 1. Create the database
@@ -80,12 +87,19 @@ psql -U postgres -c "CREATE DATABASE rmva_p2p OWNER rmva;"
 export DATABASE_URL='postgres://rmva:xxx@127.0.0.1:5432/rmva_p2p'
 
 # 3. Run
-cargo run -p server --release
+chmod +x p2p_server-linux-x86_64 && ./p2p_server-linux-x86_64
 ```
 
-Building the DLL (32-bit Windows):
+**Option 2: Build from source**
+
+Requirements: Rust stable, PostgreSQL.
 
 ```bash
+# Server
+export DATABASE_URL='postgres://rmva:xxx@127.0.0.1:5432/rmva_p2p'
+cargo run -p server --release
+
+# DLL (32-bit Windows)
 rustup target add i686-pc-windows-msvc
 cargo build -p net-win --release --target i686-pc-windows-msvc
 # Output: target/i686-pc-windows-msvc/release/rgss3_rust_net.dll

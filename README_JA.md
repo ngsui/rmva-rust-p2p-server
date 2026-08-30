@@ -69,7 +69,14 @@ PostgreSQL
 
 ## 始め方
 
-必要環境：Rust stable、PostgreSQL。
+**方法1：ビルド済みバイナリをダウンロード（推奨）**
+
+[Releases](https://github.com/ngsui/rmva-rust-p2p-server/releases) からコンパイル済みの成果物をダウンロード。Rust環境は不要：
+
+- `p2p_server-linux-x86_64` — Linuxサーバー（musl静的リンク、任意のx86_64ディストリで依存ゼロ実行）
+- `rgss3_rust_net_win32.zip` — 32ビット WindowsクライアントDLL（解凍してゲームの `System/` フォルダへ）
+
+サーバーにはPostgreSQLが必要。DBを作成して実行：
 
 ```bash
 # 1. データベース作成
@@ -80,12 +87,19 @@ psql -U postgres -c "CREATE DATABASE rmva_p2p OWNER rmva;"
 export DATABASE_URL='postgres://rmva:xxx@127.0.0.1:5432/rmva_p2p'
 
 # 3. 実行
-cargo run -p server --release
+chmod +x p2p_server-linux-x86_64 && ./p2p_server-linux-x86_64
 ```
 
-DLL（32ビット Windows）のビルド：
+**方法2：ソースからビルド**
+
+必要環境：Rust stable、PostgreSQL。
 
 ```bash
+# サーバー
+export DATABASE_URL='postgres://rmva:xxx@127.0.0.1:5432/rmva_p2p'
+cargo run -p server --release
+
+# DLL（32ビット Windows）
 rustup target add i686-pc-windows-msvc
 cargo build -p net-win --release --target i686-pc-windows-msvc
 # 成果物：target/i686-pc-windows-msvc/release/rgss3_rust_net.dll

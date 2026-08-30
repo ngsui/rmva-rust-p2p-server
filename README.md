@@ -69,7 +69,14 @@ PostgreSQL
 
 ## 快速开始
 
-要求：Rust stable、PostgreSQL。
+**方式一：直接下载（推荐）**
+
+到 [Releases](https://github.com/ngsui/rmva-rust-p2p-server/releases) 下载编译好的产物，无需 Rust 环境：
+
+- `p2p_server-linux-x86_64` — Linux 服务器（musl 静态链接，任何 x86_64 发行版零依赖直跑）
+- `rgss3_rust_net_win32.zip` — 32 位 Windows 客户端 DLL（解压后放入游戏的 `System/` 目录）
+
+服务器需要 PostgreSQL，建库后即可运行：
 
 ```bash
 # 1. 建库
@@ -80,12 +87,19 @@ psql -U postgres -c "CREATE DATABASE rmva_p2p OWNER rmva;"
 export DATABASE_URL='postgres://rmva:xxx@127.0.0.1:5432/rmva_p2p'
 
 # 3. 运行
-cargo run -p server --release
+chmod +x p2p_server-linux-x86_64 && ./p2p_server-linux-x86_64
 ```
 
-DLL（Windows 32 位）：
+**方式二：源码编译**
+
+要求：Rust stable、PostgreSQL。
 
 ```bash
+# 服务器
+export DATABASE_URL='postgres://rmva:xxx@127.0.0.1:5432/rmva_p2p'
+cargo run -p server --release
+
+# DLL（32 位 Windows）
 rustup target add i686-pc-windows-msvc
 cargo build -p net-win --release --target i686-pc-windows-msvc
 # 产物：target/i686-pc-windows-msvc/release/rgss3_rust_net.dll
