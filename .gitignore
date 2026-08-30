@@ -1,0 +1,18 @@
+# 构建产物
+/target
+**/target
+*.dll
+*.exe
+*.bin
+
+# 环境与凭据
+.env
+*.env
+
+# 日志
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml

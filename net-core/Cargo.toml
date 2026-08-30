@@ -1,0 +1,7 @@
+[package]
+name = "net-core"
+version = "0.1.0"
+edition = "2021"
+
+# 协议核心：零依赖、纯逻辑，未来可直接复用于 Android(.so) / Linux 服务器
+[dependencies]

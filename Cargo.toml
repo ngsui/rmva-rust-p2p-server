@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["net-core", "net-win", "test-harness", "server"]
+
+# 全工作区统一 release 配置
+# 注意：故意不用 panic=abort——DLL 需要 catch_unwind 把 panic 转成错误码，
+# 否则网络层任何 panic 会直接杀死游戏进程
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

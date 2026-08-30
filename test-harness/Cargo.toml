@@ -1,0 +1,12 @@
+[package]
+name = "test-harness"
+version = "0.1.0"
+edition = "2021"
+
+# 模拟 RGSS3 调用方式的测试程序：LoadLibrary 动态加载 DLL，
+# 逐个取导出函数地址调用，验证 stdcall ABI / 导出名 / 收发链路
+[[bin]]
+name = "test_harness"
+path = "src/main.rs"
+
+[dependencies]

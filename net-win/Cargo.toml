@@ -1,0 +1,12 @@
+﻿[package]
+name = "net-win"
+version = "0.1.0"
+edition = "2021"
+
+# 导出为 rgss3_rust_net.dll，供 RGSS3 的 Win32API 加载
+[lib]
+name = "rgss3_rust_net"
+crate-type = ["cdylib"]
+
+[dependencies]
+net-core = { path = "../net-core" }

@@ -1,0 +1,4 @@
+# 32 位 DLL 静态链接 CRT：玩家机器无需安装 VC++ 运行库
+# （默认动态链接 vcruntime140.dll，Game.exe 环境大概率缺失）
+[target.i686-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
