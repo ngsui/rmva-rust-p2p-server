@@ -1,5 +1,7 @@
 # RMVA Rust P2P Server
 
+> [中文](README.md) | [English](README_EN.md) | [日本語](README_JA.md)
+
 > 为 RPG Maker VX Ace 游戏打造的联机后端 — Rust 全栈实现：异步服务器 / 32 位 Windows 客户端 DLL / 账号与经济系统 / CI/CD / 云端生产部署
 
 ![Rust](https://img.shields.io/badge/Rust-stable-dea584?logo=rust)
